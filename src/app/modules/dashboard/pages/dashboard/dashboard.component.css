@@ -1,0 +1,45 @@
+.dashboard-page {
+  min-height: 100vh;
+  background: #121212;
+  color: white;
+  padding: 40px;
+  position: relative;
+}
+
+.logout-button {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: #ef3153;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dashboard-grid {
+  max-width: 900px;
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+}
+
+.category-card {
+  height: 180px;
+  border: 1px solid #777;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  transform: rotate(-35deg);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  background: #ef3153;
+  transform: rotate(0deg) scale(1.05);
+}

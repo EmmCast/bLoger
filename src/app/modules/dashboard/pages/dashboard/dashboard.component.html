@@ -1,0 +1,31 @@
+<section class="dashboard-page">
+
+  <button class="logout-button" (click)="logout()">
+    Cerrar sesión
+  </button>
+
+  <div class="dashboard-grid">
+
+    <div class="category-card" (click)="goToCategory('info')">
+      Info
+    </div>
+
+    <div class="category-card" (click)="goToCategory('serie')">
+      Series
+    </div>
+
+    <div class="category-card" (click)="goToCategory('pelicula')">
+      Películas
+    </div>
+
+    <div class="category-card" (click)="goToCategory('juego')">
+      Juegos
+    </div>
+
+    <div class="category-card" (click)="goToCategory('libro')">
+      Libros
+    </div>
+
+  </div>
+
+</section>

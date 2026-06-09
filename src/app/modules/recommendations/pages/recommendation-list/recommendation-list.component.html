@@ -1,0 +1,47 @@
+<section class="list-page">
+
+  <button class="logout-button" (click)="logout()">
+    Cerrar sesión
+  </button>
+
+  <h1>{{ title }}</h1>
+
+  <div class="filters">
+    <select>
+      <option value="">Género</option>
+      <option value="accion">Acción</option>
+      <option value="terror">Terror</option>
+      <option value="comedia">Comedia</option>
+      <option value="drama">Drama</option>
+      <option value="fantasia">Fantasía</option>
+      <option value="ciencia ficción">Ciencia ficción</option>
+    </select>
+  </div>
+
+  <div class="content-grid">
+
+    <div class="add-card">
+      Agregar
+    </div>
+
+    <div
+      class="item-card"
+      *ngFor="let recommendation of recommendations"
+      (click)="goToDetail(recommendation)">
+
+      <img [src]="recommendation.image" [alt]="recommendation.title">
+
+      <div class="card-info">
+        <h3>{{ recommendation.title }}</h3>
+        <p>{{ recommendation.genre }} - {{ recommendation.year }}</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <button class="back-button" (click)="goBack()">
+    Regresar
+  </button>
+
+</section>

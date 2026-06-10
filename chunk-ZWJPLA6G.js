@@ -1,0 +1,1 @@
+import{Aa as i,Fa as a,Ja as r,T as n,za as o}from"./chunk-NEYVOAQ4.js";var c=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=n({type:e,selectors:[["app-login"]],standalone:!0,features:[r],decls:2,vars:0,template:function(t,m){t&1&&(o(0,"h1"),a(1," LOGIN "),i())}})}}return e})();export{c as LoginComponent};

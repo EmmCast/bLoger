@@ -6,37 +6,63 @@
 
   <h1>{{ title }}</h1>
 
-  <div class="filters">
-    <select>
-      <option value="">Género</option>
-      <option value="accion">Acción</option>
-      <option value="terror">Terror</option>
-      <option value="comedia">Comedia</option>
-      <option value="drama">Drama</option>
-      <option value="fantasia">Fantasía</option>
-      <option value="ciencia ficción">Ciencia ficción</option>
-    </select>
-  </div>
+<div class="filters">
+
+  <select
+    [(ngModel)]="selectedGenre"
+    (ngModelChange)="applyFilters()">
+
+    <option value="">Todos los géneros</option>
+    <option value="Acción">Acción</option>
+    <option value="Aventura">Aventura</option>
+    <option value="Comedia">Comedia</option>
+    <option value="Drama">Drama</option>
+    <option value="Fantasía">Fantasía</option>
+    <option value="Ciencia ficción">Ciencia ficción</option>
+    <option value="Romance">Romance</option>
+    <option value="Suspenso">Suspenso</option>
+    <option value="Distopía">Distopía</option>
+    <option value="Sandbox">Sandbox</option>
+    <option value="Isekai">Isekai</option>
+
+  </select>
+
+  <input
+    type="number"
+    placeholder="Año"
+    [(ngModel)]="selectedYear"
+    (ngModelChange)="applyFilters()">
+
+  <button type="button" (click)="clearFilters()">
+    Limpiar
+  </button>
+
+
+</div>
 
   <div class="content-grid">
 
-    <div class="add-card">
-      Agregar
-    </div>
+<div
+  class="add-card"
+  (click)="goToAdd()">
 
-    <div
-      class="item-card"
-      *ngFor="let recommendation of recommendations"
-      (click)="goToDetail(recommendation)">
+  Agregar
 
-      <img [src]="recommendation.image" [alt]="recommendation.title">
+</div>
 
-      <div class="card-info">
-        <h3>{{ recommendation.title }}</h3>
-        <p>{{ recommendation.genre }} - {{ recommendation.year }}</p>
-      </div>
+ <div
+  class="item-card"
+  *ngFor="let recommendation of filteredRecommendations"
+  (click)="goToDetail(recommendation)">
 
-    </div>
+  <img [src]="recommendation.image" [alt]="recommendation.title">
+
+  <div class="card-info">
+    <h3>{{ recommendation.title }}</h3>
+    <p>{{ recommendation.genre }} - {{ recommendation.year }}</p>
+  </div>
+
+</div>
 
   </div>
 

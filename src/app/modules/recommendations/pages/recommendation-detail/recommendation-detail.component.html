@@ -34,6 +34,11 @@
 
       </div>
 
+      <app-comment-box
+        [title]="recommendation.title"
+        [comments]="recommendation.comments">
+      </app-comment-box>
+
       <button class="back-button" (click)="goBack()">
         Regresar
       </button>

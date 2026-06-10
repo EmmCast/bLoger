@@ -65,7 +65,7 @@ export class RecommendationFormComponent implements OnInit {
         year: this.year,
         description: this.description,
         image: this.image || 'https://picsum.photos/300/400?random=99',
-        trailerUrl: this.trailerUrl
+        trailerUrl: this.type === 'libro' ? '' : this.trailerUrl
       },
       user
     );

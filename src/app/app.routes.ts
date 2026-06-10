@@ -7,6 +7,12 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'info',
+    loadComponent: () =>
+      import('./modules/info/pages/info/info.component')
+        .then(c => c.InfoComponent)
+  },
+  {
     path: 'login',
     loadComponent: () =>
       import('./modules/authentication/pages/login/login.component')

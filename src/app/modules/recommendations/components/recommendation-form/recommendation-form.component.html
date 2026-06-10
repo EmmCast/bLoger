@@ -45,9 +45,12 @@
       <img [src]="image" alt="Vista previa">
     </div>
 
-    <div class="form-group">
-      <label>Trailer YouTube</label>
-      <input type="text" [(ngModel)]="trailerUrl" name="trailerUrl">
+    <div class="form-group" *ngIf="type !== 'libro'">
+      <label>Trailer URL</label>
+      <input
+        type="text"
+        [(ngModel)]="trailerUrl"
+        name="trailerUrl">
     </div>
 
     <button type="button" (click)="save()">

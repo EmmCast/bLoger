@@ -1,31 +1,36 @@
 <section class="dashboard-page">
 
-  <button class="logout-button" (click)="logout()">
-    Cerrar sesión
-  </button>
+  <div class="logout-container">
+    <button class="logout-button" (click)="logout()">
+      Cerrar sesión
+    </button>
+  </div>
+
+  <div class="dashboard-header">
+    <h1>BLoger</h1>
+    <p>Selecciona una categoría para comenzar</p>
+  </div>
 
   <div class="dashboard-grid">
 
-    <div class="category-card" (click)="goToCategory('info')">
-      Info
-    </div>
-
-    <div class="category-card" (click)="goToCategory('serie')">
-      Series
+    <div class="category-card" (click)="goInfo()">
+      Información
     </div>
 
     <div class="category-card" (click)="goToCategory('pelicula')">
       Películas
     </div>
 
-    <div class="category-card" (click)="goToCategory('juego')">
-      Juegos
+    <div class="category-card" (click)="goToCategory('serie')">
+      Series
     </div>
 
     <div class="category-card" (click)="goToCategory('libro')">
       Libros
     </div>
 
-  </div>
+    <div class="category-card" (click)="goToCategory('juego')">
+      Juegos
+    </div>
 
-</section>
+  </div>

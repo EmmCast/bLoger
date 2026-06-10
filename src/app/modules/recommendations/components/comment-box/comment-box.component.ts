@@ -34,7 +34,7 @@ export class CommentBoxComponent {
       user
     );
 
-    this.comments.push({
+    this.comments.unshift({
       user,
       message: this.message,
       createdAt: new Date().toLocaleString()

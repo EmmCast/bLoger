@@ -16,6 +16,10 @@ export class DashboardComponent {
     this.router.navigate(['/recommendations', type]);
   }
 
+  goInfo(): void {
+  this.router.navigate(['/info']);
+}
+
   logout(): void {
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);

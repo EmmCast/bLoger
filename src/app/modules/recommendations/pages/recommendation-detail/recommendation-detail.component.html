@@ -21,6 +21,19 @@
         {{ recommendation.description }}
       </p>
 
+      <div class="trailer-box" *ngIf="getYoutubeEmbedUrl(recommendation.trailerUrl)">
+
+        <h2>Trailer</h2>
+
+        <iframe
+          [src]="getYoutubeEmbedUrl(recommendation.trailerUrl)"
+          title="Trailer"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+
       <button class="back-button" (click)="goBack()">
         Regresar
       </button>

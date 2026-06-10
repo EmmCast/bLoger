@@ -25,6 +25,12 @@ export const routes: Routes = [
         .then(c => c.RecommendationListComponent)
   },
   {
+    path: 'recommendations/:type/add',
+    loadComponent: () =>
+    import('./modules/recommendations/components/recommendation-form/recommendation-form.component')
+      .then(c => c.RecommendationFormComponent)
+  },
+  {
     path: 'recommendations/:type/:title',
     loadComponent: () =>
       import('./modules/recommendations/pages/recommendation-detail/recommendation-detail.component')

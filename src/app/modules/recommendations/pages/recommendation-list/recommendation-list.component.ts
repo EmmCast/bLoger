@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { RecommendationModel } from '../../models/recommendation.model';
 import { RecommendationService } from '../../services/recommendation.service';
 
 @Component({
   selector: 'app-recommendation-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './recommendation-list.component.html',
   styleUrls: ['./recommendation-list.component.css']
 })
@@ -15,7 +17,12 @@ export class RecommendationListComponent implements OnInit {
 
   type: string = '';
   title: string = '';
+
   recommendations: RecommendationModel[] = [];
+  filteredRecommendations: RecommendationModel[] = [];
+
+  selectedGenre: string = '';
+  selectedYear: number | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +38,27 @@ export class RecommendationListComponent implements OnInit {
 
   loadRecommendations(): void {
     this.recommendations = this.recommendationService.getByType(this.type);
+    this.filteredRecommendations = [...this.recommendations];
+  }
+
+  applyFilters(): void {
+    this.filteredRecommendations = this.recommendations.filter(item => {
+      const matchGenre = this.selectedGenre
+        ? item.genre === this.selectedGenre
+        : true;
+
+      const matchYear = this.selectedYear
+        ? Number(item.year) === Number(this.selectedYear)
+        : true;
+
+      return matchGenre && matchYear;
+    });
+  }
+
+  clearFilters(): void {
+    this.selectedGenre = '';
+    this.selectedYear = null;
+    this.filteredRecommendations = [...this.recommendations];
   }
 
   getTitle(type: string): string {
@@ -48,6 +76,10 @@ export class RecommendationListComponent implements OnInit {
       default:
         return 'Recomendaciones';
     }
+  }
+
+  goToAdd(): void {
+    this.router.navigate(['/recommendations', this.type, 'add']);
   }
 
   goToDetail(recommendation: RecommendationModel): void {

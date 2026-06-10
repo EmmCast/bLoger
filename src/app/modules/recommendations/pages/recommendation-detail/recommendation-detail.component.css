@@ -63,3 +63,18 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+.trailer-box {
+  margin-top: 30px;
+}
+
+.trailer-box h2 {
+  margin-bottom: 15px;
+}
+
+.trailer-box iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border: 1px solid #777;
+}

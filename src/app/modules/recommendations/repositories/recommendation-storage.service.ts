@@ -15,7 +15,7 @@ private readonly initialRecommendations: RecommendationModel[] = [
     genre: 'Ciencia ficción',
     year: 2014,
     description: 'Película sobre viajes espaciales, el tiempo y la exploración del universo.',
-    image: 'https://picsum.photos/300/400?random=1',
+    image: 'assets/images/interestelar.jpg',
     trailerUrl: '',
     user: 'Sistema',
     comments: []
@@ -26,7 +26,7 @@ private readonly initialRecommendations: RecommendationModel[] = [
     genre: 'Acción',
     year: 1999,
     description: 'Película sobre una persona que descubre que vive dentro de un mundo virtual.',
-    image: 'https://picsum.photos/300/400?random=2',
+    image: 'assets/images/Matrix.jpg',
     trailerUrl: '',
     user: 'Sistema',
     comments: []
@@ -37,7 +37,7 @@ private readonly initialRecommendations: RecommendationModel[] = [
     genre: 'Romance',
     year: 2007,
     description: 'Película sobre una mujer que pierde a su esposo y recibe cartas que la ayudan a superar su duelo.',
-    image: 'https://picsum.photos/300/400?random=3',
+    image: 'assets/images/Pd Te amo.jpg',
     trailerUrl: '',
     user: 'Sistema',
     comments: []

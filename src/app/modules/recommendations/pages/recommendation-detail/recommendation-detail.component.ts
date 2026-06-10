@@ -4,11 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RecommendationModel } from '../../models/recommendation.model';
 import { RecommendationService } from '../../services/recommendation.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-
+import { CommentBoxComponent } from '../../components/comment-box/comment-box.component';
 @Component({
   selector: 'app-recommendation-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CommentBoxComponent],
   templateUrl: './recommendation-detail.component.html',
   styleUrls: ['./recommendation-detail.component.css']
 })

@@ -1,1 +1,31 @@
-<p>comment-box works!</p>
+<section class="comments-section">
+
+  <h2>Comentarios</h2>
+
+  <div class="comment-form">
+    <textarea
+      rows="3"
+      placeholder="Escribe tu comentario"
+      [(ngModel)]="message">
+    </textarea>
+
+    <button type="button" (click)="addComment()">
+      Comentar
+    </button>
+  </div>
+
+  <div class="comments-list">
+
+    <div
+      class="comment-card"
+      *ngFor="let comment of comments">
+
+      <strong>{{ comment.user }}</strong>
+      <p>{{ comment.message }}</p>
+      <span>{{ comment.createdAt }}</span>
+
+    </div>
+
+  </div>
+
+</section>
